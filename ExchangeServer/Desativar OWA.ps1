@@ -1,4 +1,4 @@
-$user = Get-Content "C:\temp\Report\Disabled\AERO_generica.txt"
+$user = Get-Content "C:\temp\Report\Disabled\conta_generica.txt"
 $qtduser = $user.Count
 $i=$qtduser
 
