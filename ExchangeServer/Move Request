@@ -1,0 +1,1 @@
+Get-MoveRequest -MoveStatus "InProgress" | Get-MoveRequestStatistics | ft alias, statusdetail,percentcomplete, bytestrans* -auto
