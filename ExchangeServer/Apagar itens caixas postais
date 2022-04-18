@@ -1,0 +1,25 @@
+Adicionando as permissões necessárias para acessar as Caixas Postais
+
+Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User coradi -AccessRights FullAccess -InheritanceType all
+
+Removendo as permissões necessárias para acessar as Caixas Postais
+
+Get-Mailbox -ResultSize unlimited | Remove-MailboxPermission -User coradi -AccessRights FullAccess -InheritanceType all
+
+
+Buscando a mensagem por assunto de um usuario e salvando log para auditoria:
+
+Search-Mailbox -Identity "coradi" -SearchQuery 'Subject:"Please Review Your Information"' -TargetMailbox coradi -TargetFolder "SearchAndDeleteLog" -LogOnly -LogLevel Full
+
+Buscando a mensagem por assunto de todas as caixas postais e salvando log para auditoria:
+
+Get-Mailbox -ResultSize Unlimited | Search-Mailbox -SearchQuery 'Subject:"*[TIME CAMPO]: Fique atento! Mudanças nas tabelas de 24 e 48 meses."' -TargetMailbox coradi -TargetFolder "SearchAndDeleteLog" -LogOnly -LogLevel Full
+
+
+Apagando as mensagens de acordo com assunto de todas as caixas postais:
+
+Search-Mailbox -Identity "coradi" -SearchQuery 'Subject:"[TIME CAMPO]: Fique atento! Mudanças nas tabelas de 24 e 48 meses."' -TargetMailbox coradi -TargetFolder "SearchAndDeleteLog" -DeleteContent
+
+Apagando as mensagens de acordo com assunto de todas as caixas postais:
+
+Get-Mailbox -ResultSize Unlimited | Search-Mailbox -SearchQuery 'Subject:"Please Review Your Information"' -TargetMailbox gpo -TargetFolder "SearchAndDeleteLog" -DeleteContent
