@@ -1,0 +1,9 @@
+"C:\Program Files\Microsoft\Exchange Server\V15\Scripts"
+
+StartDagServerMaintenance.ps1 -ServerName nomedoservidor
+
+
+Após a Manutenção executar o seguinte script:
+
+StopDagServerMaintenance.ps1 -ServerName nomedoservidor
+
