@@ -1,0 +1,1 @@
+GCM exsetup |%{$_.Fileversioninfo}
