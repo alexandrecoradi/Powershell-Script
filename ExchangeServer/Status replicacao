@@ -1,0 +1,7 @@
+Get-MailboxServer | Test-ReplicationHealth
+
+
+Get-MailboxServer | Get-MailboxDatabaseCopyStatus
+
+
+Get-DatabaseAvailabilityGroup | ForEach {$ _. Servers | ForEach {Test-ReplicationHealth -Server $ _}}
