@@ -1,0 +1,17 @@
+Verificar Database com Log Circular ativo
+
+Get-MailboxDatabase | where {$_.CircularLoggingEnabled -eq $true}
+
+Get-MailboxDatabase | select name, circularloggingenabled | sort circularloggingenabled -desc | ft -AutoSize
+
+$dbs = Get-MailboxDatabase | where {$_.CircularLoggingEnabled -eq $true}
+$dbs
+
+
+Habilitar Log Circular
+
+$dbs = Get-MailboxDatabase | where {$_.CircularLoggingEnabled -eq $false} | Set-MailboxDatabase -Identity $db -CircularLoggingEnabled $True
+
+
+Necessário reiniciar o Information Store
+
