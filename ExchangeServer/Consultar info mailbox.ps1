@@ -1,0 +1,1 @@
+Get-Mailbox -ResultSize unlimited | select Displayname,UserPrincipalName,PrimarySmtpAddress,Database,IsMailboxEnabled,AccountDisabled,IsValid,WhenCreated,WhenChanged,ExchangeGuid | Export-Csv C:\Temp\Report\all_info_user_novembro.csv -Encoding UTF8
