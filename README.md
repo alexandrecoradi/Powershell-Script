@@ -1,3 +1,3 @@
 # Powershell-Script
 
-Aqui vou incluir alguns scripts de powershell que acabei utilizando no decorrer do tempo. 
+Aqui vou compartilhar alguns scripts de powershell que acabei utilizando no decorrer do tempo. Certamente vou esquecer de incluir a maioria, mas fazer o que.....
